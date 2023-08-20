@@ -1,14 +1,15 @@
-
+import { NavLink } from "react-router-dom"
 
 const CustomNavbar = () => {
     return (
         <nav>,
             <ul>
-                <li></li>
+                <li><NavLink to="/Translator">Translator</NavLink>
+                </li>
             </ul>
             <ul>
                 <li>
-                    {/*<NavLink></NavLink>*/}
+                    <NavLink to="/Profile">Profile</NavLink>
                 </li>
             </ul>
         </nav>

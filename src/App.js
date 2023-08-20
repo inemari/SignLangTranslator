@@ -8,11 +8,13 @@ import {
 import Login from './views/Login';
 import Translator from './views/Translator';
 import Profile from './views/Profile';
+import CustomNavbar from './components/Navbar/CustomNavbar';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <CustomNavbar />
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/Translator' element={<Translator />} />
