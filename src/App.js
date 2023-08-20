@@ -5,17 +5,18 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
+import Login from './views/Login';
+import Translator from './views/Translator';
+import Profile from './views/Profile';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Routes>{
-        /* 
-          <Route path='/' element={<Login/>}/>
-          <Route path='/Translator' element={<Translator/>}/>
-          <Route path='/Profile' element={<Profile/>}/> 
-          */}
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/Translator' element={<Translator />} />
+          <Route path='/Profile' element={<Profile />} />
         </Routes>
       </div></BrowserRouter>
   );
