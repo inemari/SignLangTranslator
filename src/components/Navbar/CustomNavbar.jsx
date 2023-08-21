@@ -1,13 +1,12 @@
+import logo from "../../Logo2.png";
 import "../../styles/navbar.css";
 import { NavLink } from "react-router-dom"
 
 const CustomNavbar = () => {
     return (
         <nav className="navigation">
-            <a href="/" className="brand-name">
-                Sign Language Translator
-            </a>   <div
-                className="navigation-menu">
+            <img src={logo} alt="logo" className="brand-logo"></img>
+            <div className="navigation-menu">
                 <ul>
                     <li><NavLink to="/Translator">Translator</NavLink>
                     </li>
