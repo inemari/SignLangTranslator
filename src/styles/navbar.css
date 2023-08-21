@@ -3,20 +3,32 @@
     width: 100%;
     display: flex;
     align-items: center;
+    padding: 0.5rem 0;
+    background-color: #7494EA;
+    color: black;
+    box-shadow: 0 1px 2px 2px #89898941;
     position: relative;
-    padding: 0.5rem 0rem;
-    background-color: #cdcdcd;
-    color: black;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+    justify-content: space-between;
 }
 
-.brand-name {
-    text-decoration: none;
-    color: black;
-    font-size: 1.3rem;
-    margin-left: 1rem;
+.brand-logo {
+    height: 60px;
+    margin-left: 3rem;
 }
 
-.navigation ul {
+.navigation-menu {
+    display: flex;
     flex-direction: row;
+    margin-right: 3rem;
+}
+
+.navigation li {
+    display: inline-block;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 1rem;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: aliceblue;
 }
