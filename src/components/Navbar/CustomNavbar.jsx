@@ -1,4 +1,4 @@
-import logo from "../../Logo2.png";
+import logo from "../../Logo3.png";
 import "../../styles/navbar.css";
 import { NavLink } from "react-router-dom"
 
