@@ -6,7 +6,7 @@ import {
   Route
 } from 'react-router-dom'
 import Login from './views/Login';
-import Translator from './views/Translator';
+import TranslationPage from './views/TranslationPage';
 import Profile from './views/Profile';
 import CustomNavbar from './components/Navbar/CustomNavbar';
 
@@ -17,7 +17,7 @@ function App() {
         <CustomNavbar />
         <Routes>
           <Route path='/' element={<Login />} />
-          <Route path='/Translator' element={<Translator />} />
+          <Route path='/TranslationPage' element={<TranslationPage />} />
           <Route path='/Profile' element={<Profile />} />
         </Routes>
       </div></BrowserRouter>

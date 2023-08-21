@@ -8,7 +8,7 @@ const CustomNavbar = () => {
             <img src={logo} alt="logo" className="brand-logo"></img>
             <div className="navigation-menu">
                 <ul>
-                    <li><NavLink to="/Translator">Translator</NavLink>
+                    <li><NavLink to="/TranslationPage">Translator</NavLink>
                     </li>
                 </ul>
                 <ul>

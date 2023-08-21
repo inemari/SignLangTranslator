@@ -1,7 +1,8 @@
 import { useForm } from 'react-hook-form'
 
+
 const usernameConfig = {
-    required: true, 
+    required: true,
     minLength: 3
 }
 
@@ -23,28 +24,28 @@ const LoginForm = () => {
             return null
         }
 
-        if(errors.username.type === 'required') {
-          return <span>Username is required</span>
+        if (errors.username.type === 'required') {
+            return <span>Username is required</span>
         }
 
         if (errors.username.type === 'minLength') {
-          return <span>Username is too short (atleast 3 characters)</span>
+            return <span>Username is too short (atleast 3 characters)</span>
         }
     })()
 
     return (
-     <>
-        <h2>What's youre name?</h2>
-         <form onSubmit={handleSubmit(onSubmit) }>
-            <fieldset>
-                <label htmlFor="username">Username: </label>
-                <input type ="text" placeholder="johndoe" {...register("username", usernameConfig) } />
-                {errorMessage}
-            </fieldset>
+        <>
+            <h2>What's youre name?</h2>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <fieldset>
+                    <label htmlFor="username">Username: </label>
+                    <input type="text" placeholder="johndoe" {...register("username", usernameConfig)} />
+                    {errorMessage}
+                </fieldset>
 
-            <button type="submit">Continue</button>
-         </form>
-     </>
+                <button type="submit">Continue</button>
+            </form>
+        </>
     )
 }
 export default LoginForm
