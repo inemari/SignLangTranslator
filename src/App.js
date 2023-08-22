@@ -14,9 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div className="App-header">
-          <CustomNavbar />
-        </div>
+        <CustomNavbar />
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/TranslationPage' element={<TranslationPage />} />
