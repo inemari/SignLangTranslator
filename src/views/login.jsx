@@ -1,4 +1,4 @@
-import LoginField from '../components/Login/LoginField.jsx';
+import LoginForm from '../components/Login/LoginForm.jsx';
 
 
 const Login = () => {
@@ -6,7 +6,7 @@ const Login = () => {
         <div className="login-container">
             <h1>Welcome to Our App</h1>
 
-            <LoginField />
+            <LoginForm />
         </div>
     );
 }

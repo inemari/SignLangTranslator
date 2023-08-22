@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
+const apiUrl = process.env.REACT_APP_API_URL
 const Translator = () => {
     const [inputText, setInputText] = useState('');
     const [translatedText, setTranslatedText] = useState('');
 
     const handleTranslate = async () => {
         try {
-            const response = await fetch('https://continuous-aback-impatiens.glitch.me/translations', {
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
