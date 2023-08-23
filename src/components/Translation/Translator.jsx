@@ -2,25 +2,26 @@ import React, { useState } from 'react';
 import "../../styles/translation.css";
 // State management for input text and translated text
 
-const apiUrl = process.env.REACT_APP_API_URL; 
+const apiUrl = process.env.REACT_APP_API_URL;
 const Translator = () => {
     const [inputText, setInputText] = useState('');
     const [translatedText, setTranslatedText] = useState('');
 
-      // Function to handle translation
+    // Function to handle translation
     const handleTranslate = async () => {
-     
-        
+
+
         try {
             const response = await fetch(apiUrl, {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json',
+                headers: {
+                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ text: inputText }),
             });
 
 
-             // Checking if the API request was successful
+            // Checking if the API request was successful
             if (response.ok) {
                 const data = await response.json();
                 setTranslatedText(data.translatedText);
