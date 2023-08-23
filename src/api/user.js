@@ -49,7 +49,7 @@ const createUser = async (username) => {
         const data = await response.json()
         return [null, data]
     } catch (error) {
-        return [error.message, []] 
+        return [error.message, []]
     }
 }
 

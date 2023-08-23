@@ -1,9 +1,10 @@
-import ProfileSignHistoryItem from "./TranslatedItem";
+import React from "react";
+import TranslatedItem from "./TranslatedItem";
 
-const ProfileSignHistory = ({ translationContent }) => {
-    const translationList = translationContent.map(
-        (translation, index) => <ProfileSignHistoryItem key={index + '-' + translation} translation={translation} />
-    );
+const TranslationLog = ({ translationContent }) => {
+    const translationList = translationContent.map((translation, index) => (
+        <TranslatedItem key={index} translation={translation} />
+    ));
 
     return (
         <section>
@@ -12,4 +13,5 @@ const ProfileSignHistory = ({ translationContent }) => {
         </section>
     );
 };
-export default ProfileSignHistory;
+
+export default TranslationLog;
