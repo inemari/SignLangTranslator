@@ -1,42 +1,45 @@
 .navigation {
+    /* Subtle shadow for depth */
+    box-shadow: 0 1px 2px 2px #89898941;
+    /* Set for potential absolute positioned children */
+    position: relative;
     height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0.5rem 0;
     background-color: #7494EA;
     color: black;
+    /* Playful rounded font stack */
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
 
-    /* Subtle shadow for depth */
-    box-shadow: 0 1px 2px 2px #89898941;
 
-    /* Set for potential absolute positioned children */
-    position: relative;
-
-    justify-content: space-between;
 }
+
 
 .brand-logo {
     /* Spacing from the left edge */
-    margin-left: 3rem;
-
+    margin-left: 1rem;
+    height: 70px;
 }
 
 .navigation-menu {
-    display: flex;
-
     /* Spacing from the right edge */
     margin-right: 3rem;
-
+    display: flex;
 }
 
 .navigation li {
+
     display: inline-block;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Simplified margin to apply horizontally */
+    margin: 0 1rem;
+
 }
 
 .navigation a {
     /* Remove default link underline */
     text-decoration: none;
-    color: aliceblue;
+    color: #FFFCF9;
 }
