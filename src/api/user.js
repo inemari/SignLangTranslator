@@ -19,7 +19,6 @@ const apiUrl = process.env.REACT_APP_API_URL
 const checkForUser = async (username) => {
     try {
         const response = await fetch(`${apiUrl}?username=${username}`)
-
         if (!response.ok) {
             throw new Error('Could not complete request.')
         }
@@ -50,7 +49,7 @@ const createUser = async (username) => {
         const data = await response.json()
         return [null, data]
     } catch (error) {
-        return [error.message, []]
+        return [error.message, []] 
     }
 }
 
