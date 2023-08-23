@@ -6,37 +6,33 @@
     padding: 0.5rem 0;
     background-color: #7494EA;
     color: black;
-
-    /* Subtle shadow for depth */
     box-shadow: 0 1px 2px 2px #89898941;
-
-    /* Set for potential absolute positioned children */
+    /* Subtle shadow for depth */
     position: relative;
-
+    /* Set for potential absolute positioned children */
     justify-content: space-between;
 }
 
 .brand-logo {
+    height: 70px;
+    margin-left: 1rem;
     /* Spacing from the left edge */
-    margin-left: 3rem;
-
 }
 
 .navigation-menu {
     display: flex;
-
-    /* Spacing from the right edge */
     margin-right: 3rem;
-
+    /* Spacing from the right edge */
 }
 
 .navigation li {
     display: inline-block;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Font stack for fallback */
 }
 
 .navigation a {
-    /* Remove default link underline */
     text-decoration: none;
+    /* Remove default link underline */
     color: aliceblue;
 }
