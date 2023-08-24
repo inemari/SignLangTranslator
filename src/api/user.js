@@ -115,13 +115,44 @@ export const addUserTranslation = async (userId, translation) => {
     }
 };
 
+
+
 export const getUserTranslations = async (userId) => {
-    const [error, user] = await getUserById(userId);
+    try {
+        // First, get the current translations for the user
+        const [errorGettingUser, existingUser] = await getUserById(userId);
 
-    if (error) {
-        return [error, null];
+        if (errorGettingUser) {
+            throw new Error('Could not fetch user data.');
+        }
+
+        // Now, return the user's translations
+        return [null, existingUser.translations]; // Return the translations directly
+    } catch (error) {
+        return [error.message, null];
     }
+};
 
-    return [null, user.translations];
-}
+export const clearUserTranslations = async (userId) => {
+    try {
+        // Send a patch request to clear the user's translations
+        const response = await fetch(`${apiUrl}/${userId}`, {
+            method: 'PATCH',
+            headers: createHeaders(),
+            body: JSON.stringify({
+                translations: []
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Could not complete request.');
+        }
+
+        const data = await response.json();
+        return [null, data];
+    } catch (error) {
+        return [error.message, null];
+    }
+};
+
 

@@ -1,38 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { getUserTranslations } from '../../api/user';
 
-
 const TranslationLog = ({ userId }) => {
     const [translations, setTranslations] = useState([]);
-    const [error, setError] = useState(null);
+    const [translationsError, setTranslationsError] = useState(null);
 
     useEffect(() => {
-        (async () => {
-            const [err, userTranslations] = await getUserTranslations(userId);
-            if (err) {
-                setError(err);
-                setTranslations([]);
+        async function fetchUserTranslations() {
+            const [error, userTranslations] = await getUserTranslations(userId);
+
+            if (error) {
+                setTranslationsError(error);
             } else {
-                setError(null);
                 setTranslations(userTranslations);
             }
-        })();
+        }
+
+        fetchUserTranslations();
     }, [userId]);
 
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
+    // Show only the last 10 translations
+    const lastTenTranslations = translations.slice(-10);
 
     return (
         <div>
-            <h2>Translation Log</h2>
+            {translationsError && <p>Error: {translationsError}</p>}
             <ul>
-                {translations.map((translation, index) => (
+                {lastTenTranslations.map((translation, index) => (
                     <li key={index}>{translation}</li>
                 ))}
             </ul>
         </div>
     );
 };
+
 
 export default TranslationLog;
