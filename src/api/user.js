@@ -69,3 +69,47 @@ export const loginUser = async (username) => {
 
     return await createUser(username)
 }
+
+const getUserById = async (userId) => {
+    try {
+        const response = await fetch(`${apiUrl}/${userId}`)
+        if (!response.ok) {
+            throw new Error('Could not complete request.')
+        }
+        const data = await response.json()
+        return [null, data]
+    } catch (error) {
+        return [error.message, null]
+    }
+}
+
+//save the users tranlated words to the api
+export const addUserTranslation = async (userId, translation) => {
+    try {
+        // First, get the current translations for the user
+        const [errorGettingUser, existingUser] = await getUserById(userId);
+
+        if (errorGettingUser) {
+            throw new Error('Could not fetch user data.');
+        }
+
+        // Append the new translation to the existing translations
+        const updatedTranslations = [...existingUser.translations, translation];
+
+        // Now, send a patch request with the updated translations
+        const response = await fetch(`${apiUrl}/${userId}`, {
+            method: 'PATCH',
+            headers: createHeaders(),
+            body: JSON.stringify({
+                translations: updatedTranslations
+            })
+        });
+        if (!response.ok) {
+            throw new Error('Could not complete request.');
+        }
+        const data = await response.json();
+        return [null, data];
+    } catch (error) {
+        return [error.message, null];
+    }
+};

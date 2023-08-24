@@ -1,4 +1,4 @@
-import Translate from '../components/Translation/Translations';
+import Translate from '../components/Translation/Translate';
 import withAuth from '../hoc/withAuth';
 
 const TranslationPage = () => {
