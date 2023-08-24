@@ -114,13 +114,20 @@ export const addUserTranslation = async (userId, translation) => {
     }
 };
 
+
+
 export const getUserTranslations = async (userId) => {
-    const [error, user] = await getUserById(userId);
+    try {
+        // First, get the current translations for the user
+        const [errorGettingUser, existingUser] = await getUserById(userId);
 
-    if (error) {
-        return [error, null];
+        if (errorGettingUser) {
+            throw new Error('Could not fetch user data.');
+        }
+
+        // Now, return the user's translations
+        return [null, existingUser.translations]; // Return the translations directly
+    } catch (error) {
+        return [error.message, null];
     }
-
-    return [null, user.translations];
-}
-
+};
