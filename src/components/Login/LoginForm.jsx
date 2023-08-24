@@ -63,7 +63,7 @@ const LoginForm = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <fieldset>
                     <label htmlFor="username">Username: </label>
-                    <input type="text" placeholder="johndoe" {...register("username", usernameConfig)} />
+                    <input type="text" placeholder="username" {...register("username", usernameConfig)} />
                     {errorMessage}
                 </fieldset>
 
