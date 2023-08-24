@@ -1,20 +1,38 @@
 import React, { useState } from 'react';
 import letterTranslations from '../../data/letterTranslations';
 import { useUser } from '../../context/UserContext';
-import { translationAdd } from '../../api/translation'
 
+import { addUserTranslation } from '../../api/user';
 
 
 const Translate = () => {
     const [inputText, setInputText] = useState('');
     const [displayedImages, setDisplayedImages] = useState([]);
-    const user = useUser();
+    const { user, setUser } = useUser();
 
-    const handleKeyInput = (e) => {
-        setInputText(e.target.value);
-    };
+    const handleKeyInput = (e) => { setInputText(e.target.value); };
 
     const handleTranslateClick = async () => {
+        // Add the translation to user's translations in the backend
+        const [error, updatedUser] = await addUserTranslation(user.id, inputText);
+        if (error) {
+            console.error("Failed to add translation:", error);
+            return;
+        }
+
+        // Update the user data in the context
+        setUser(updatedUser);
+
+        const images = inputText.split('').map((letter) => {
+            const translation = letterTranslations.find((item) => item.name === letter.toLowerCase());
+            return translation ? translation.image : null;
+        }).filter(Boolean);
+
+        setDisplayedImages(images);
+    };
+
+
+    /* const handleTranslateClick = translation => {
         translationAdd(user, inputText);
         const images = inputText.split('').map((letter) => {
             const translation = letterTranslations.find((item) => item.name === letter.toLowerCase());
@@ -24,7 +42,7 @@ const Translate = () => {
 
         setDisplayedImages(images);
 
-    };
+    };*/
 
     return (
         <div>

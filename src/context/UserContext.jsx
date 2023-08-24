@@ -1,24 +1,28 @@
 import { createContext, useContext, useState } from "react";
-import { storageRead } from "../utils/storage";
+import { storageRead, storageSave } from "../utils/storage"; // <- Added storageWrite here
 import { STORAGE_KEY_USER } from "../const/storageKeys";
 
 // Context Object -> exposing
-const UserContext = createContext()
+const UserContext = createContext();
 
 export const useUser = () => {
-    return useContext(UserContext) // { user, setUser }
+    return useContext(UserContext); // { user, setUser }
 }
 
-// Provider -> managing state
 const UserProvider = ({ children }) => {
 
-    const [user, setUser] = useState(storageRead(STORAGE_KEY_USER))
+    const [user, setUser] = useState(storageRead(STORAGE_KEY_USER));
+
+    // This function updates the user state and also writes the updated data to local storage
+    const updateUser = (updatedUser) => {
+        setUser(updatedUser);
+        storageSave(STORAGE_KEY_USER, updatedUser); // <- Changed storageWrite to storageSave here
+    }
 
     const state = {
         user,
-        setUser
+        setUser: updateUser // Using updateUser now instead of setUser directly
     }
-
 
     return (
         <UserContext.Provider value={state}>
@@ -26,4 +30,5 @@ const UserProvider = ({ children }) => {
         </UserContext.Provider>
     )
 }
-export default UserProvider
+
+export default UserProvider;
