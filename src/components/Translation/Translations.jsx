@@ -1,23 +1,29 @@
 import React, { useState } from 'react';
 import letterTranslations from '../../data/letterTranslations';
+import { useUser } from '../../context/UserContext';
+import { translationAdd } from '../../api/translation'
 
 
 
 const Translate = () => {
     const [inputText, setInputText] = useState('');
     const [displayedImages, setDisplayedImages] = useState([]);
+    const user = useUser();
 
     const handleKeyInput = (e) => {
         setInputText(e.target.value);
     };
 
-    const handleTranslateClick = () => {
+    const handleTranslateClick = async () => {
+        translationAdd(user, inputText);
         const images = inputText.split('').map((letter) => {
             const translation = letterTranslations.find((item) => item.name === letter.toLowerCase());
+
             return translation ? translation.image : null;
         }).filter(Boolean);
 
         setDisplayedImages(images);
+
     };
 
     return (
