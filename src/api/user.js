@@ -1,3 +1,4 @@
+import { createHeaders } from './index'
 /**
  * user.js
  * 
@@ -7,7 +8,7 @@
  * 
  */
 
-import { createHeaders } from './index'
+
 
 const apiUrl = process.env.REACT_APP_API_URL
 
