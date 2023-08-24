@@ -131,3 +131,27 @@ export const getUserTranslations = async (userId) => {
         return [error.message, null];
     }
 };
+
+export const clearUserTranslations = async (userId) => {
+    try {
+        // Send a patch request to clear the user's translations
+        const response = await fetch(`${apiUrl}/${userId}`, {
+            method: 'PATCH',
+            headers: createHeaders(),
+            body: JSON.stringify({
+                translations: []
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Could not complete request.');
+        }
+
+        const data = await response.json();
+        return [null, data];
+    } catch (error) {
+        return [error.message, null];
+    }
+};
+
+

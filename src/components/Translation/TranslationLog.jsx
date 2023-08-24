@@ -34,4 +34,5 @@ const TranslationLog = ({ userId }) => {
     );
 };
 
+
 export default TranslationLog;

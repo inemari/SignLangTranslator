@@ -4,29 +4,35 @@ import "../../styles/navbar.css";
 import { NavLink } from "react-router-dom";
 
 const CustomNavbar = () => {
-    const { logout } = useUser(); // <-- Get the logout function from the context
+    const { user, logout } = useUser();
 
     return (
         <nav className="navigation">
-            <img src={logo} alt="logo" className="brand-logo"></img>
+            <img src={logo} alt="logo" className="brand-logo" />
             <div className="navigation-menu">
-                <ul>
-                    <li>
-                        <NavLink to="/TranslationPage">
-                            Translator
-                        </NavLink>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <NavLink to="/Profile">
-                            Profile
-                        </NavLink>
-                    </li>
-                </ul>
-                <ul>  <button onClick={logout} className="logout-button">Logout</button> {/* Use the logout function */}
-
-                </ul>
+                {user !== null && (
+                    <ul>
+                        <li>
+                            <NavLink to="/TranslationPage">Translator</NavLink>
+                        </li>
+                    </ul>
+                )}
+                {user !== null && (
+                    <ul>
+                        <li>
+                            <NavLink to="/Profile">Profile</NavLink>
+                        </li>
+                    </ul>
+                )}
+                {user !== null && (
+                    <ul>
+                        <li>
+                            <button onClick={logout} className="logout-button">
+                                Logout
+                            </button>
+                        </li>
+                    </ul>
+                )}
             </div>
         </nav>
     );
