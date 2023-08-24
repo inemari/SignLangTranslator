@@ -113,3 +113,14 @@ export const addUserTranslation = async (userId, translation) => {
         return [error.message, null];
     }
 };
+
+export const getUserTranslations = async (userId) => {
+    const [error, user] = await getUserById(userId);
+
+    if (error) {
+        return [error, null];
+    }
+
+    return [null, user.translations];
+}
+
