@@ -1,0 +1,41 @@
+.clear-button {
+  background-color: #ff5a5a;
+  color: #fff;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.clear-button:hover {
+  background-color: #ff3b3b;
+}
+
+/* Content Box adjustments for this page only */
+.content-box {
+  padding: 3% 10%;
+
+}
+
+/*List container*/
+.profile-container ol {
+  margin-top: 30%;
+  background-color: white;
+}
+
+.translation-list {
+  display: grid;
+  /* This will create a single column layout */
+  grid-template-columns: 1fr;
+
+  gap: 1px;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.translation-log-item {
+  background-color: white;
+  padding: 5px;
+  box-sizing: border-box;
+  /* A light border for clarity */
+  border: 1px solid #d3d3d3;
+
+}
