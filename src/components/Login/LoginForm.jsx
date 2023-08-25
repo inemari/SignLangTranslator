@@ -5,7 +5,7 @@ import { storageSave } from '../../utils/storage';
 import { useNavigate } from 'react-router-dom'
 import { useUser } from '../../context/UserContext';
 import { STORAGE_KEY_USER } from '../../const/storageKeys';
-
+import '../../App.css';
 
 
 const usernameConfig = {
@@ -59,17 +59,17 @@ const LoginForm = () => {
         }
     })()
 
-  return (
+    return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <h2>Enter username</h2>
-                <fieldset>
 
-                    <div className='inputWithButton'>
-                        <input type="text" placeholder="What's your name?"  {...register("username", usernameConfig)} />{errorMessage}
+                <fieldset className='input-box'>
+                    <h2>Enter username</h2>
+                    <div className='input-field'>
+                        <input type="text" placeholder="What's your name?"  {...register("username", usernameConfig)} />
                         <button type="submit" disabled={loading} className='input-button'>Login</button>
-
                     </div>
+                    {errorMessage}
                 </fieldset>
 
                 {loading && <p>Logging in</p>}

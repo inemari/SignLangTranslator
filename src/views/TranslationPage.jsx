@@ -1,12 +1,12 @@
 import Translate from '../components/Translation/Translate';
 import withAuth from '../hoc/withAuth';
+import '../App.css'
 
 const TranslationPage = () => {
     return (
-        <div className="translator-container">
-            <Translate />
-        </div>
+        <Translate />
     );
 }
+
 
 export default withAuth(TranslationPage);

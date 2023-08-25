@@ -1,13 +1,10 @@
 import LoginForm from '../components/Login/LoginForm.jsx';
-import '../styles/login.css'
+import '../App.css'
 
 const Login = () => {
     return (
-        <div className='login-background'>
-            <div className="login-field">
-                <LoginForm />
-            </div>
-        </div>);
+        <LoginForm />
+    );
 }
 
 export default Login;
