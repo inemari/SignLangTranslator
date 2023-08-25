@@ -14,7 +14,11 @@ SignLangTranslator is a sign translation app built using React and powered by np
 By running this in the terminal, you'll open a new Webpage in your browser. The local will be "localhost:3000". Remeber, you NEED to use your React browser extension.
 
 ## Set-up
-You need to make an ".env" file where you insert the API key and URL.
+You need to make an ".env" file where you insert the API key and URL. Such as:
+``` 
+API_KEY : your key,
+API_URL : resource url,
+```
 
 ## Contributors
 - [Noah Høgstøl](https://github.com/Nuuah)
