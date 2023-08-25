@@ -53,11 +53,7 @@ const Translate = () => {
             </div>
 
             {/* Images */}
-            <div style={{
-                background: "white",
-                borderRadius: "inherit",
-                marginTop: "2rem"
-            }}>
+            <div className="sign-container">
                 {
                     displayedImages.map((image, index) => (
                         <img

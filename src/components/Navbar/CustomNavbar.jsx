@@ -3,6 +3,7 @@ import logo from "../../Logo3.png"; // Logo
 import { useUser } from "../../context/UserContext"; // useUser
 import "../../styles/navbar.css"; // Styles
 import { NavLink } from "react-router-dom";
+import "../../App.css"
 
 // Definition for the custom navigation bar
 const CustomNavbar = () => {

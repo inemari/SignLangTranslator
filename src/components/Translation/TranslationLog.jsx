@@ -26,7 +26,7 @@ const TranslationLog = ({ userId }) => {
     
     // Component JSX
     return (
-        <div className="translation-log-container">
+        <div>
             {translationsError && <p>Error: {translationsError}</p>}
             <ol className="translation-list"> 
                 {lastTenTranslations.map((translation, index) => (
