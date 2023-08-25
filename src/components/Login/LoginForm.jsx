@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom'
 import { useUser } from '../../context/UserContext';
 import { STORAGE_KEY_USER } from '../../const/storageKeys';
 
+
+
 const usernameConfig = {
     required: true,
     minLength: 3
@@ -19,14 +21,14 @@ const LoginForm = () => {
 
     // Local State
     const [loading, setLoading] = useState(false);
-    const [ apiError, setApiError ] = useState(null)
+    const [apiError, setApiError] = useState(null)
 
     // Side Effects
     useEffect(() => {
         if (user !== null) {
-          navigate('TranslationPage')
+            navigate('TranslationPage')
         }
-    }, [ user, navigate ])  // Empy Deps - Only run once
+    }, [user, navigate])  // Empy Deps - Only run once
 
     // Event Handlers
     const onSubmit = async ({ username }) => {
@@ -57,19 +59,21 @@ const LoginForm = () => {
         }
     })()
 
-    return (
+  return (
         <>
-            <h2>What's your name?</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
+                <h2>Enter username</h2>
                 <fieldset>
-                    <label htmlFor="username">Username: </label>
-                    <input type="text" placeholder="johndoe" {...register("username", usernameConfig)} />
-                    {errorMessage}
+
+                    <div className='inputWithButton'>
+                        <input type="text" placeholder="What's your name?"  {...register("username", usernameConfig)} />{errorMessage}
+                        <button type="submit" disabled={loading} className='input-button'>Login</button>
+
+                    </div>
                 </fieldset>
 
-                <button type="submit" disabled={loading}>Continue</button>
                 {loading && <p>Logging in</p>}
-                { apiError && <p>{ apiError }</p>}
+                {apiError && <p>{apiError}</p>}
             </form>
         </>
     )

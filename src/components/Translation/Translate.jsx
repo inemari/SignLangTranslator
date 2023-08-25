@@ -30,18 +30,6 @@ const Translate = () => {
         setDisplayedImages(images);
     };
 
-
-    /* const handleTranslateClick = translation => {
-        translationAdd(user, inputText);
-        const images = inputText.split('').map((letter) => {
-            const translation = letterTranslations.find((item) => item.name === letter.toLowerCase());
-
-            return translation ? translation.image : null;
-        }).filter(Boolean);
-
-        setDisplayedImages(images);
-
-    };*/
     return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", minHeight: "100vh" }}>
         {/* Input Text Box */}
