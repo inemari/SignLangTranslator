@@ -1,53 +1,40 @@
-/* Container styles */
-.profile-container {
-  padding: 4rem;
-  background-color: #7494EA;
-  border-bottom: solid 6px #6d435a;
-  border-radius: 40px;
-  box-sizing: border-box;
-  width: 75vw;
-  height: fit-content;
-  margin: 0;
-  /* Ensuring no margins are affecting positioning */
-}
-
-
-
-/* Clear Translations button */
 .clear-button {
   background-color: #ff5a5a;
   color: #fff;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 .clear-button:hover {
   background-color: #ff3b3b;
 }
 
-/* TranslationLog styles */
-.translation-log {
-  border-top: 1px solid #ddd;
-  padding-top: 20px;
-  background-color: #b1ede8;
-  border-radius: 13px;
-  padding: 40px;
+/* Content Box adjustments for this page only */
+.content-box {
+  padding: 3% 10%;
+  margin-top: 30% !important;
+}
+
+/*List container*/
+.profile-container ol {
+  background-color: white;
 }
 
 .translation-list {
-  list-style-type: decimal;
-  padding-left: 20px;
+  display: grid;
+  /* This will create a single column layout */
+  grid-template-columns: 1fr;
+
+  gap: 1px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .translation-log-item {
-  margin-bottom: 10px;
-  padding: 15px;
-  border-radius: 8px;
-  font-size: 20px;
-  color: #333;
-}
+  background-color: white;
+  padding: 5px;
+  box-sizing: border-box;
+  /* A light border for clarity */
+  border: 1px solid #d3d3d3;
 
-.inner-white-box {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  width: 80%;
 }

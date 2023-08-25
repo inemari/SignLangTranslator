@@ -1,37 +1,38 @@
 .navigation {
+    /* Ensure navbar is always on top */
+    position: fixed;
+    z-index: 1000;
 
+    height: 15vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 0;
     background-color: #FF70A6;
     color: rgb(221, 217, 217);
-    /* Playful rounded font stack */
     font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
-
     margin-top: 0;
     text-decoration: none;
     width: 100%;
-    position: fixed;
-    z-index: 2;
-    height: 15%;
 }
 
 .brand-logo {
-    /* Spacing from the left edge */
+    /* Logo spacing from left edge */
     margin-left: 1rem;
     height: 7rem;
 }
 
 .navigation-menu {
-    /* Spacing from the right edge */
+    align-items: center;
+    /* Menu spacing from right edge */
     margin-right: 3rem;
+
     display: flex;
 }
 
 .navigation li {
     display: inline-block;
-    /* Simplified margin to apply horizontally */
+    /* Horizontal spacing between navigation items */
     margin: 1rem;
 
 }
@@ -40,15 +41,12 @@
     text-decoration: none;
     color: rgb(255, 255, 255);
     padding: 0.5rem;
-
 }
-
-
 
 .navigation a.active {
     font-weight: bold;
+    /* Highlight for active navigation link */
     border-bottom: 5px solid #f9fafb2a;
-
 
 }
 

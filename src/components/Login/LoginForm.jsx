@@ -60,13 +60,13 @@ const LoginForm = () => {
             return <span>Username is too short (atleast 3 characters)</span>
         }
     })()
-    
+
     // Componenet JSX
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
 
-                <fieldset className='input-box'>
+                <fieldset className='content-box'>
                     <h2>Enter username</h2>
                     <div className='input-field'>
                         <input type="text" placeholder="What's your name?"  {...register("username", usernameConfig)} />
