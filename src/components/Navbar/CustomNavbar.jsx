@@ -6,6 +6,8 @@ import { NavLink } from "react-router-dom";
 const CustomNavbar = () => {
     const { user, logout } = useUser();
 
+    
+    
     return (
         <nav className="navigation">
             <img src={logo} alt="logo" className="brand-logo" />
@@ -27,8 +29,8 @@ const CustomNavbar = () => {
                 {user !== null && (
                     <ul>
                         <li>
-                            <button onClick={logout} className="logout-button">
-                                Logout
+                            <button onClick={logout} className="logout-btn">
+                                Sign out
                             </button>
                         </li>
                     </ul>
