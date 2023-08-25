@@ -1,3 +1,4 @@
+// Importing required modules and components 
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form'
 import { loginUser } from '../../api/user'
@@ -7,44 +8,45 @@ import { useUser } from '../../context/UserContext';
 import { STORAGE_KEY_USER } from '../../const/storageKeys';
 import '../../App.css';
 
-
+// Validation cinfugrationg for the username
 const usernameConfig = {
     required: true,
-    minLength: 3
+    minLength: 3 // Needs to have 3 or equal to 3 characters.
 }
 
+// Definiton for the login form
 const LoginForm = () => {
-    // Hooks
+    // Hooks Form setup
     const { register, handleSubmit, formState: { errors } } = useForm()
-    const { user, setUser } = useUser()
-    const navigate = useNavigate()
+    const { user, setUser } = useUser() //Accessing user data and setter function
+    const navigate = useNavigate() // Navigation function 
 
-    // Local State
+    // Local State - loading API error
     const [loading, setLoading] = useState(false);
     const [apiError, setApiError] = useState(null)
 
-    // Side Effects
+    // Side Effects - Redirect to TranslationPage if the user is already logged out
     useEffect(() => {
         if (user !== null) {
             navigate('TranslationPage')
         }
-    }, [user, navigate])  // Empy Deps - Only run once
+    }, [user, navigate])  // Empty Deps - Only run once
 
     // Event Handlers
     const onSubmit = async ({ username }) => {
         setLoading(true);
         const [error, userResponse] = await loginUser(username)
         if (error !== null) {
-            setApiError(error)
+            setApiError(error) // Handling API error
         }
         if (userResponse !== null) {
             storageSave(STORAGE_KEY_USER, userResponse)
-            setUser(userResponse)
+            setUser(userResponse) // Handling successful login response
         }
         setLoading(false);
     }
 
-    // Render Functions
+    // Render Functions - dispalying error messages
     const errorMessage = (() => {
         if (!errors.username) {
             return null
@@ -58,7 +60,8 @@ const LoginForm = () => {
             return <span>Username is too short (atleast 3 characters)</span>
         }
     })()
-
+    
+    // Componenet JSX
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -78,4 +81,4 @@ const LoginForm = () => {
         </>
     )
 }
-export default LoginForm
+export default LoginForm // Exporting the LoginForm coponenet as the default export
