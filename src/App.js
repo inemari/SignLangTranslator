@@ -16,8 +16,8 @@ function App() {
       <div className="App">
         <CustomNavbar />
         <div class="content-wrapper">
-          <div className='half-bg'></div>
-
+          <div className='half-bg'>
+          </div>
 
           <Routes>
             <Route path='/' element={<Login />} />

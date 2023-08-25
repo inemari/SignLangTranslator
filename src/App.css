@@ -4,15 +4,22 @@
     font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
 }
 
-
-button {
+/* Global styles for buttons */
+button,
+.input-button {
     border: none;
     border-radius: 4px;
-    padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
+    /* Inherits the font-family from the parent */
+    font-family: inherit;
+    transition: background-color 0.3s ease;
+
+}
+
+button {
+    padding: 10px 20px;
     color: #fff;
-    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
 }
 
 
@@ -20,25 +27,23 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85%;
+    height: 80%;
     width: 100%;
     position: relative;
-
+    padding-bottom: 10%;
+    overflow: auto;
 }
 
+/* styling for login-field and translate-field*/
 input[type=text] {
     width: 80%;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 50px 0 0 50px;
-    background-image: url('./keyboard.png');
-    background-position: 20px center;
-    background-size: 2rem;
-    background-repeat: no-repeat;
+    background: #fff url('./keyboard.png') 20px center/2rem no-repeat;
     padding: 0 20px 0 60px;
     min-height: 3rem;
     font-size: medium;
-
 }
 
 input[type=text]:focus {
@@ -46,15 +51,12 @@ input[type=text]:focus {
     box-shadow: 0 0 0 2px #FF70A6;
 }
 
-/* Button Styling */
+
 .input-button {
     background-color: #FF70A6;
     color: white;
     height: 3rem;
     border-radius: 0 50px 50px 0;
-    border: none;
-    transition: background-color 0.3s ease;
-
     width: 20%;
 }
 
@@ -66,41 +68,33 @@ h2 {
     color: #352D39;
     width: 100%;
     padding-bottom: 2rem;
-
 }
 
-/* Base Styles */
+/* Removes auto border for fieldset*/
 fieldset {
     border: none;
 }
 
-/* Login Background */
+/* Background Styles */
 .half-bg {
-    position: absolute;
-    /* will position it relative to the nearest positioned ancestor, in this case, .App */
+    position: fixed;
     top: 0;
-    /* starts from the top */
     left: 0;
-    /* starts from the left */
     width: 100%;
     height: 50vh;
-    /* covers half of the viewport height */
     background-color: #FF70A6;
     z-index: -1;
-    /* Ensures this background doesn't overlap any other content */
 }
 
-
-.input-box {
-    padding: 4rem;
+/* Content Box */
+.content-box {
+    padding: 3rem;
     background-color: #7494EA;
-    border-bottom: solid 6px #6d435a;
+    border-bottom: 6px solid #6d435a;
     border-radius: 40px;
     box-sizing: border-box;
     width: 75vw;
-    height: fit-content;
-    margin: 0;
-    /* Ensuring no margins are affecting positioning */
+    margin-top: 15vh;
 }
 
 .input-field {
@@ -108,7 +102,6 @@ fieldset {
     border-radius: 50px;
     width: 100%;
     padding: 0;
-
 }
 
 .input-field:focus-within {
@@ -117,12 +110,10 @@ fieldset {
 
 .translator {
     align-content: center;
-    height: 100vh;
     width: 100vw;
 }
 
 .sign-container {
-    background: "white";
-    border-radius: "inherit";
-    margin-top: "2rem";
+    background-color: white;
+    border-radius: inherit;
 }

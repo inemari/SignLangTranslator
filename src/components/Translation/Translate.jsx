@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import letterTranslations from '../../data/letterTranslations';
 import { useUser } from '../../context/UserContext';
 import { addUserTranslation } from '../../api/user';
+import '../../App.css';
+
 
 // Definition for translation functionality 
 const Translate = () => {
@@ -10,10 +12,10 @@ const Translate = () => {
     const [inputText, setInputText] = useState('');
     const [displayedImages, setDisplayedImages] = useState([]);
     const { user, setUser } = useUser(); // Accessing user data and setter function from context
-    
+
     // Event handler for input text changes
-    const handleKeyInput = (e) => { setInputText(e.target.value); }; 
-    
+    const handleKeyInput = (e) => { setInputText(e.target.value); };
+
     // Event handler for translate button "click"
     const handleTranslateClick = async () => {
         // Add the translation to user's translations in the backend
@@ -25,7 +27,7 @@ const Translate = () => {
 
         // Update the user data in the context
         setUser(updatedUser);
-        
+
         // Generate an array of image URLs based on the input text
         const images = inputText.split('').map((letter) => {
             const translation = letterTranslations.find((item) => item.name === letter.toLowerCase());
@@ -34,10 +36,10 @@ const Translate = () => {
 
         setDisplayedImages(images); // Set the displayed images state
     };
-    
+
     // Component JSX
     return (
-        <div className="input-box">
+        <div className="content-box">
             {/* Input Text Box */}
             <h2>What would you like to translate?</h2>
             <div className='input-field'>
