@@ -1,66 +1,110 @@
-/* Input Field */
+.App {
+    width: 100vw;
+    height: 100vh;
+}
+
+.navbar {
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    height: 15%;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(85%);
+    width: 100%;
+    position: relative;
+
+}
+
 input[type=text] {
-    width: 80%;
+    width: calc(100% - 120px);
     box-sizing: border-box;
-    border: none;
+    border: 3px solid #eaeaea;
     border-radius: 50px 0 0 50px;
     font-size: 16px;
-    background-color: white;
+    background-color: #fffcf9;
     background-image: url('./user-icon.png');
     background-position: 20px center;
     background-size: 30px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 60px;
-    margin-bottom: 10px;
-    /* Added margin for separation from the button on small screens */
 }
 
-/* Inner border when focused */
 input[type=text]:focus {
     outline: none;
-    /* Removing the default browser focus outline */
     box-shadow: inset 0 0 0 2px #7494EA;
-    /* This creates the inner border effect on focus, you can adjust the color if needed */
 }
 
 /* Button Styling */
 .input-button {
-    width: auto;
     background-color: #7494EA;
     color: white;
     padding: 12px 20px;
-    /* Match with input padding */
     border-radius: 0 30px 30px 0;
-    /* Adjust to fit seamlessly */
     border: none;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    text-align: center;
 }
 
 .input-button:hover {
     background-color: #5a76d9;
 }
 
-/* Media Query for larger screens */
-@media screen and (max-width: 300px) {
-    .login-field {
-        flex-direction: row;
-        /* Places input and button side-by-side on larger screens */
-    }
-
-    input[type=text] {
-        flex: 1;
-        margin-right: 10px;
-    }
-
-    button {
-        width: auto;
-        /* Auto width on larger screens */
-    }
-}
-
 h2 {
     color: #352D39;
+    width: 100%;
+    padding-bottom: 2rem;
+
+}
+
+/* Base Styles */
+fieldset {
+    border: none;
+}
+
+/* Login Background */
+.half-bg {
+    position: absolute;
+    /* will position it relative to the nearest positioned ancestor, in this case, .App */
+    top: 0;
+    /* starts from the top */
+    left: 0;
+    /* starts from the left */
+    width: 100%;
+    height: 50vh;
+    /* covers half of the viewport height */
+    background-color: #7494EA;
+    z-index: -1;
+    /* Ensures this background doesn't overlap any other content */
+}
+
+.input-box {
+    padding: 4rem;
+    background-color: #b1ede8;
+    border-bottom: solid 6px #6d435a;
+    border-radius: 40px;
+    box-sizing: border-box;
+    width: 75vw;
+    height: fit-content;
+}
+
+.input-field {
+    width: 100%;
+}
+
+.translator {
+    align-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.sign-container {
+    background: "white";
+    border-radius: "inherit";
+    margin-top: "2rem";
 }
