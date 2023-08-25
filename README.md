@@ -15,7 +15,7 @@ By running this in the terminal, you'll open a new Webpage in your browser. The 
 ## Set-up
 
 ## Contributors
-* Noah Høgstøl (@Nuuah)
+(Nuuah)(https://github.com/Nuuah)
 * Ritwaan Hashi (@ritwaan)
 * Ine Mari Bedersen (@inemari)
 
