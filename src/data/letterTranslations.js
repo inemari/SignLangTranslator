@@ -1,3 +1,4 @@
+// Data array containing letter-to-image translations
 const letterTranslations = [
     {
         id: 1,

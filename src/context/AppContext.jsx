@@ -8,6 +8,7 @@ import UserProvider from "./UserContext";
  */
 
 
+// Context provider component for the entire app
 const AppContext = ({ children }) => {
     return (
         // Wrapping child components with the UserProvider

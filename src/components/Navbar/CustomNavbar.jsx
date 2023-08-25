@@ -4,6 +4,7 @@ import "../../styles/navbar.css";
 import { NavLink } from "react-router-dom";
 
 const CustomNavbar = () => {
+ 
     const { user, logout } = useUser();
 
     
