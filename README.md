@@ -13,7 +13,11 @@ SignLangTranslator is a sign translation app built using React and powered by np
 By running this in the terminal, you'll open a new Webpage in your browser. The local will be "localhost:3000". Remeber, you NEED to use your React browser extension.
 
 ## Set-up
-
+You need to make an ".env" file using the following template:
+```
+REACT_APP_API_KEY=ZGEcvp1FgNTKMbzam8tBeaLi0Q22f2b0n2Pch8oXXs3NnXWcMxYgpL3fsIewhu1C
+REACT_APP_API_URL=https://goofy-tartan-saturnalia.glitch.me/translations
+```
 ## Contributors
 - [Noah Høgstøl](https://github.com/Nuuah)
 - [Rtiwaan Hashi](https://github.com/Ritwaan)
