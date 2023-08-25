@@ -15,8 +15,8 @@ By running this in the terminal, you'll open a new Webpage in your browser. The 
 ## Set-up
 
 ## Contributors
-(Nuuah)(https://github.com/Nuuah)
-* Ritwaan Hashi (@ritwaan)
-* Ine Mari Bedersen (@inemari)
+- [Nuuah](https://github.com/Nuuah)
+- [Ritwaan](https://github.com/Ritwaan)
+- [inemari](https://github.com/inemari)
 
 ## Enjoy!
