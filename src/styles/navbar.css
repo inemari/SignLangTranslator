@@ -1,21 +1,20 @@
 .navigation {
-    /* Subtle shadow for depth */
-    box-shadow: 0 1px 2px 2px #89898941;
-    /* Set for potential absolute positioned children */
-    position: relative;
-    height: 15%;
-    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 0;
-    background-color: #7494EA;
+    background-color: #FF70A6;
     color: rgb(221, 217, 217);
     /* Playful rounded font stack */
     font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
-    position: sticky;
+
     margin-top: 0;
     text-decoration: none;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    height: 15%;
 }
 
 .brand-logo {
@@ -31,45 +30,31 @@
 }
 
 .navigation li {
-
     display: inline-block;
     /* Simplified margin to apply horizontally */
     margin: 1rem;
 
 }
 
+.navigation a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 0.5rem;
+
+}
+
+
+
 .navigation a.active {
     font-weight: bold;
-    color: rgb(0, 0, 0); 
-    background-color: #0ab7ec; 
-    padding: 0.5rem; 
-    border-radius: 15px;
-    text-decoration: none;
-    margin-top: 0,4px; 
+    border-bottom: 5px solid #f9fafb2a;
+
+
 }
 
 .logout-btn {
     background-color: #FFFFFF;
     color: #111827;
-    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; 
-    font-size: .950rem;
-    font-weight: 700;
-    line-height: 0,4rem;
-    padding: 0.5rem,; /* Økt padding for å øke bredden på knappen */
-    text-align: center;
-    cursor: pointer;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-user-select: none;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    text-decoration: none; 
-    
-    border-radius: 4px;
-    outline: none;
-    box-shadow: none;
-  margin-top: 0,4px; 
 }
 
 .logout-btn:hover {
