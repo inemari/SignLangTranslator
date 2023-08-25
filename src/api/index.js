@@ -1,4 +1,4 @@
-
+// Retrieve the API key from environment variables
 const apiKey = process.env.REACT_APP_API_KEY
 
 /*  
@@ -7,7 +7,7 @@ const apiKey = process.env.REACT_APP_API_KEY
     from an env
 */
 export const createHeaders = () => {
-
+    // Return an object with the required headers
     return {
         'Content-Type': 'application/json',
         'x-api-key': apiKey
