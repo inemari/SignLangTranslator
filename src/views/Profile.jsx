@@ -9,10 +9,7 @@ const Profile = () => {
     const { user } = useUser();
 
     return (
-
-
         <TranslationLog userId={user.id} />
-
     );
 };
 

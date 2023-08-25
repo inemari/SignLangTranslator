@@ -32,6 +32,7 @@ button {
     position: relative;
     padding-bottom: 10%;
     overflow: auto;
+    margin-bottom: 30% !important;
 }
 
 /* styling for login-field and translate-field*/
@@ -94,7 +95,7 @@ fieldset {
     border-radius: 40px;
     box-sizing: border-box;
     width: 75vw;
-    margin-top: 15vh;
+
 }
 
 .input-field {
