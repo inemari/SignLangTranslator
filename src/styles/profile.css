@@ -12,11 +12,12 @@
 /* Content Box adjustments for this page only */
 .content-box {
   padding: 3% 10%;
-  margin-top: 30% !important;
+
 }
 
 /*List container*/
 .profile-container ol {
+  margin-top: 30%;
   background-color: white;
 }
 
