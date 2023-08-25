@@ -3,25 +3,25 @@
     box-shadow: 0 1px 2px 2px #89898941;
     /* Set for potential absolute positioned children */
     position: relative;
-    height: 60px;
+    height: 15%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 0;
     background-color: #7494EA;
-    color: black;
+    color: rgb(221, 217, 217);
     /* Playful rounded font stack */
     font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
-
-
+    position: sticky;
+    margin-top: 0;
+    text-decoration: none;
 }
-
 
 .brand-logo {
     /* Spacing from the left edge */
     margin-left: 1rem;
-    height: 70px;
+    height: 7rem;
 }
 
 .navigation-menu {
@@ -34,30 +34,29 @@
 
     display: inline-block;
     /* Simplified margin to apply horizontally */
-    margin: 0 1rem;
+    margin: 1rem;
 
 }
 
-.navigation a {
-    /* Remove default link underline */
+.navigation a.active {
+    font-weight: bold;
+    color: rgb(0, 0, 0); 
+    background-color: #0ab7ec; 
+    padding: 0.5rem; 
+    border-radius: 15px;
     text-decoration: none;
-    color: #FFFCF9;
+    margin-top: 0,4px; 
 }
-
 
 .logout-btn {
     background-color: #FFFFFF;
-    border: 1px solid rgb(209, 213, 219);
-    border-radius: .5rem;
     color: #111827;
-    font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: .875rem;
-    font-weight: 600;
-    line-height: 1.25rem;
-    padding: .75rem 1rem;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; 
+    font-size: .950rem;
+    font-weight: 700;
+    line-height: 0,4rem;
+    padding: 0.5rem,; /* Økt padding for å øke bredden på knappen */
     text-align: center;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     cursor: pointer;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -65,20 +64,14 @@
     -webkit-user-select: none;
     -ms-touch-action: manipulation;
     touch-action: manipulation;
-
-    :hover {
-        background-color: #f9fafb;
-    }
-}
-
-
-
-.logout-btn:focus {
-    outline: 2px solid rgba(0, 0, 0, 0.1);
-    outline-offset: 2px;
-}
-
-.logout-btn:focus-visible {
-    -webkit-box-shadow: none;
+    text-decoration: none; 
+    
+    border-radius: 4px;
+    outline: none;
     box-shadow: none;
+  margin-top: 0,4px; 
+}
+
+.logout-btn:hover {
+    background-color: #f9fafb;
 }
