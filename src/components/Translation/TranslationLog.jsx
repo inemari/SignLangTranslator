@@ -23,16 +23,17 @@ const TranslationLog = ({ userId }) => {
     const lastTenTranslations = translations.slice(-10);
 
     return (
-        <div>
+        <div className="translation-log-container">
             {translationsError && <p>Error: {translationsError}</p>}
-            <ul>
+            <ol className="translation-list"> {/* Use "ol" for ordered list */}
                 {lastTenTranslations.map((translation, index) => (
-                    <li key={index}>{translation}</li>
+                    <li key={index} className="translation-log-item">
+                        {translation}
+                    </li>
                 ))}
-            </ul>
+            </ol>
         </div>
     );
 };
-
 
 export default TranslationLog;
