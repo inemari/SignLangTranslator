@@ -25,13 +25,12 @@ const Profile = () => {
 
     return (
         <div className="profile-container">
-            <div className="inner-white-box">
-                <h1 className="profile-title" style={{ fontFamily: "Figma Hand, cursive" }}>Your Translation History</h1>
-                <h3 style={{ fontFamily: "Figma Hand, cursive" }}>Your last 10 translations:</h3>
-                <button className="clear-button" onClick={handleClearTranslations}>Clear Translations</button>
-                <TranslationLog userId={user.id} />
-            </div>
+            <button className="clear-button" onClick={handleClearTranslations}>Clear Translations</button>
+            <h1>Your Translation History</h1>
+            <h3>Your last 10 translations:</h3>
+            <TranslationLog userId={user.id} />
         </div>
+
     );
 };
 

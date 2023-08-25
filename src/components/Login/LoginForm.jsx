@@ -69,11 +69,11 @@ const LoginForm = () => {
                         <input type="text" placeholder="What's your name?"  {...register("username", usernameConfig)} />
                         <button type="submit" disabled={loading} className='input-button'>Login</button>
                     </div>
-                    {errorMessage}
+                    {errorMessage}{loading && <p>Logging in</p>}
+                    {apiError && <p>{apiError}</p>}
                 </fieldset>
 
-                {loading && <p>Logging in</p>}
-                {apiError && <p>{apiError}</p>}
+
             </form>
         </>
     )
