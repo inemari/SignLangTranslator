@@ -7,6 +7,7 @@ import "../../App.css"
 
 // Definition for the custom navigation bar
 const CustomNavbar = () => {
+
     const { user, logout } = useUser(); //Using the userHook to access user data and logout function
 
     // Rendering the component 

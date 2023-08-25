@@ -1,13 +1,17 @@
-import { storageSave } from "../utils/storage"; // Ensure the path is correct
-import { STORAGE_KEY_USER } from "../const/storageKeys";// userActions.js
+//importing the necessary functions and constans from different modules
+import { storageSave } from "../utils/storage"; // importing a function to save data to storage
+import { STORAGE_KEY_USER } from "../const/storageKeys"; //importing a constant for the storage key
 
-
-export const updateUser = (setUser, updatedUser) => {
+// This function updates the user data and saves it to storage
+export const updateUser = (setUser, updatedUser) => { 
     setUser(updatedUser);
     storageSave(STORAGE_KEY_USER, updatedUser);
 }
 
+// This function logs out the user and clears their data from storage
 export const logoutUser = (setUser) => {
     setUser(null);
-    storageSave(STORAGE_KEY_USER, null);
+    
+    // Removing the user data from storage by saving null with the same key
+    storageSave(STORAGE_KEY_USER, null); 
 }
