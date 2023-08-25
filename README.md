@@ -6,6 +6,7 @@ SignLangTranslator is a sign translation app built using React and powered by np
 * git clone https://github.com/inemari/SignLangTranslator.git
 * cd react-SignLangTranslator-app
 * npm install
+* npm install react-router-dom
 
 ## Usage
 * npm start
