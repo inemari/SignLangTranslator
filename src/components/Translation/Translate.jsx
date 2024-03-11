@@ -55,7 +55,7 @@ const Translate = () => {
             </div>
 
             {/* Images */}
-            <div className="sign-container">
+            <div className="sign-container ">
                 {
                     displayedImages.map((image, index) => (
                         <img
